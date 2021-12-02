@@ -1,13 +1,1146 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-</head>
-<body>
-    <h1>Soon there will be!</h1>
-    <p>Hello :)</p>
-</body>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="robots" content="index, follow">
+        <meta name="keywords" content="творчество, монтаж, видео, графика, видеограф, менеджер" />
+        <meta name="description" content="Моё профессиональное портфолио" />
+        <meta name="author" content="Defina"/>
+        
+        <meta property="og:type" content="website">
+        <meta property="og:site_name" content="Портфолио">
+        <meta property="og:image" content="http://mysite.zona/img/apple_touth_icon.png">
+        <meta property="og:title" content="Портфолио" />
+        <meta property="og:url" content="http://mysite.zona/" />
+        <meta property="og:description" content="Моё профессиональное портфолио"/> 
+
+        <link href="/assets/img/apple_touth_icon.png" rel="apple-touch-icon" />
+        <link rel="icon" href="/assets/img/favicon.ico" />
+        <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon" />
+        <link rel="stylesheet" href="https://glyphsearch.com/bower_components/ionicons/css/ionicons.css">
+        <link rel="stylesheet" href="https://glyphsearch.com/bower_components/font-awesome/css/all.min.css">
+        <link rel="stylesheet" href="/assets/css/swiper-bundle.min.css">
+        <link rel="stylesheet" href="/assets/css/tailwind.css">
+        <link rel="stylesheet" href="/assets/css/styles.css">
+
+        <title>Portfolio</title>
+    </head>
+    <body id="top">
+
+        
+        <header id="header">
+            <nav id="menu" class="fixed w-full bg-white dark:bg-gray-900 z-50 py-6 select-none border-b border-gray-50">
+                <div class="max-w-6xl mx-auto relative flex flex-wrap items-center justify-between overflow-hidden font-medium md:overflow-visible lg:justify-center sm:px-4 md:px-2">
+                    <div class="flex items-center justify-start w-1/4 h-full pr-4">
+                        <a href="/" class="inline-block py-4 md:py-0">
+                            <span class="p-1 text-xl font-black leading-none text-gray-900">
+                                <span>Anastasia</span>
+                                <span class="text-indigo-600">.</span>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="top-0 left-0 items-start hidden w-full h-full p-4 text-sm bg-gray-900 bg-opacity-50 md:items-center md:w-3/4 md:absolute lg:text-base md:bg-transparent md:p-0 md:relative md:flex" :class="{'flex fixed': showMenu, 'hidden': !showMenu }">
+                        <div class="flex-col w-full h-auto overflow-hidden bg-white rounded-lg md:bg-transparent md:overflow-visible md:rounded-none md:relative md:flex md:flex-row">
+                            <a href="/" class="inline-flex items-center block w-auto h-16 px-6 text-xl font-black leading-none text-gray-900 md:hidden">Anastasia<span class="text-indigo-600">.</span></a>
+                            <div id="nav" class="nav flex flex-col items-start justify-center w-full space-x-6 text-center lg:space-x-8 md:w-2/3 md:mt-0 md:flex-row md:items-center text-gray-500">
+                                <a href="#top" class="active hex inline-block w-full py-2 mx-0 font-medium md:w-auto md:px-0 md:mx-2 lg:mx-3 hover:text-indigo-600 md:text-center text-left text-indigo-600">Home</a>
+                                <a href="#about" class="hex inline-block w-full py-2 mx-0 font-medium md:w-auto md:px-0 md:mx-2 lg:mx-3 hover:text-indigo-600 md:text-center text-left">About</a>
+                                <a href="#skills" class="hex inline-block w-full py-2 mx-0 font-medium md:w-auto md:px-0 md:mx-2 lg:mx-3 hover:text-indigo-600 md:text-center text-left">Skills</a>
+                                <a href="#services" class="hex inline-block w-full py-2 mx-0 font-medium md:w-auto md:px-0 md:mx-2 lg:mx-3 hover:text-indigo-600 md:text-center text-left">Services</a>
+                                <a href="#portfolio" class="hex inline-block w-full py-2 mx-0 font-medium md:w-auto md:px-0 md:mx-2 lg:mx-3 hover:text-indigo-600 md:text-center text-left">Portfolio</a>
+                                <a href="#contact" class="hex inline-block w-full py-2 mx-0 font-medium md:w-auto md:px-0 md:mx-2 lg:mx-3 hover:text-indigo-600 md:text-center text-left">Contact</a>
+                            </div>
+                            <div class="flex flex-col items-start justify-end w-full pt-4 md:items-center md:w-1/3 md:flex-row md:py-0">
+                                <div class="w-full px-6 py-2 mr-0 text-gray-700 md:px-0 lg:pl-2 md:mr-4 lg:mr-5 md:w-auto">
+                                    <a href="tel:+79659718649" class="flex items-center space-x-2 text-gray-800 hover:text-black">
+                                        <i class="ionicons ion-android-call text-2xl text-indigo-600"></i>
+                                        <span>+7 965 971 86 49</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div @click="showMenu = !showMenu" class="absolute right-0 flex flex-col items-center items-end justify-center w-10 h-10 bg-white rounded-full cursor-pointer md:hidden hover:bg-gray-100">
+                        <svg class="w-6 h-6 text-gray-700" x-show="!showMenu" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                            <path d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                        <svg class="w-6 h-6 text-gray-700" x-show="showMenu" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="display: none;">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main class="w-full py-20">
+            <section class="max-w-5xl mx-auto py-20 h-screen section" id="home">
+                <div class="grid grid-cols-3 gap-7">
+                    <div class="grid h-full col-span-2 relative">
+                        <div class="grid place-items-start place-self-center gap-7">
+                            <h1 class="text-6xl font-bold text-black">Привет, я Анастасия</h1>
+                            <p class="text-xl font-semibold text-gray-700">Videograph, Video Designer</p>
+                            <p class="text-2xl text-gray-500 font-light w-96">High level experience in web design and development knowledge, producing quality work.</p>                            
+                            <div class="flex space-x-2 mt-5">
+                                <a href="#contact" class="hex px-14 py-3 rounded flex space-x-4 uppercase items-center bg-indigo-600 hover:bg-indigo-800 text-white text-2xl font-bold">
+                                    <i>Contact me</i> 
+                                    <i class="ionicons ion-paper-airplane"></i>
+                                </a>
+                                <a href="#about" class="hex px-8 py-3 rounded flex space-x-5 items-center text-2xl font-normal">
+                                    <i class="ionicons ion-mouse text-indigo-600"></i> 
+                                    <i>Scroll down</i>
+                                    <i class="animate-bounce ionicons ion-ios-arrow-thin-down text-indigo-600 text-4xl"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="absolute -left-16 top-20">
+                            <div class="flex flex-col space-y-5">
+                                <a href="https://linkedin.com/">
+                                    <i class="ionicons ion-social-linkedin-outline text-5xl text-indigo-400 hover:text-indigo-600"></i>
+                                </a>
+                                <a href="https://dribbble.com/">
+                                    <i class="ionicons ion-social-dribbble-outline text-5xl text-indigo-400 hover:text-indigo-600"></i>
+                                </a>
+                                <a href="https://behance.com/">
+                                    <i class="fab fa-behance text-4xl text-indigo-400 hover:text-indigo-600"></i>
+                                </a>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="grid">
+                        <div class="place-self-end">
+                            <svg class="avatar" viewBox="0 0 200 187" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <mask id="mask0" mask-type="alpha">
+                                    <path d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 165.547 
+                                    130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 129.362C2.45775 
+                                    97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 -0.149132 97.9666 
+                                    0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z"/>
+                                </mask>
+                                <g mask="url(#mask0)">
+                                    <path d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 
+                                    165.547 130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 
+                                    129.362C2.45775 97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 
+                                    -0.149132 97.9666 0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z"/>
+                                    <image class="avatar_face" x='10' y='0' href="/assets/img/Anastasia.png"/>
+                                </g>
+                            </svg>                            
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            
+            <section class="about max-w-6xl mx-auto py-10 h-screen section" id="about">
+                <div class="grid gap-5 text-center">
+                    <h2 class="mt-10 text-5xl font-bold text-black">Обо мне</h2>
+                    <p class="text-gray-400">Информация</p>
+                </div>
+                <div class="grid grid-cols-2 gap-7 mt-10">
+                    <div class="mr-20">
+                        <img src="/assets/img/about.jpg" class="w-full rounded-md" alt="About me" />
+                    </div>
+                    <div class="grid place-items-start place-self-center gap-7">
+                        <div>
+                            <p class="text-gray-600 text-2xl leading-10 font-light">
+                                Web developer, with extensive knowledge and years of experience, 
+                                working in web technologies and Ui / Ux design, delivering quality work.
+                            </p>
+                        </div>                        
+                        <div class="grid grid-cols-3 gap-20">
+                            <div class="grid text-center gap-3">
+                                <h3 class="font-bold text-5xl">0,8+</h3>
+                                <p  class="text-gray-500">Years <br> experience</p>
+                            </div>                             
+                            <div class="grid text-center gap-3">
+                                <h3 class="font-bold text-5xl">20+</h3>
+                                <p  class="text-gray-500">Completed <br> project</p>
+                            </div>                             
+                            <div class="grid text-center gap-3">
+                                <h3 class="font-bold text-5xl">5+</h3>
+                                <p  class="text-gray-500">Companies <br> worked</p>
+                            </div>                             
+                        </div> 
+                        <a href="/assets/pdf/Alexa-Cv.pdf" download class="table mt-3 px-14 py-4 text-2xl font-bold rounded bg-indigo-600 text-white hover:bg-indigo-800">
+                            Download CV &#160;<i class="fa fa-download"></i>
+                        </a>                       
+                       
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="skills max-w-6xl mx-auto py-10 section" id="skills">
+                <div class="grid gap-5 text-center">
+                    <h2 class="mt-10 text-5xl font-bold text-black">Skills</h2>
+                    <p class="text-gray-400">Мои технические навыки</p>
+                </div>
+                <div class="grid grid-cols-3 gap-14 mt-10">
+
+                    <div>
+                        <div class="flex space-x-4 items-center">
+                            <i class="ionicons ion-android-film text-5xl text-indigo-400"></i> 
+                            <div>
+                                <h4 class="flex space-x-2 items-center font-bold text-xl">
+                                    <span>Video Editing</span>
+                                </h4>
+                                <p class="font-light tracking-widest text-sm text-gray-400 mt-1">Опыт более 3 лет</p>
+                            </div>
+                        </div>
+                        <ul class="grid gap-3 mt-10">
+                            <li>
+                                <div class="flex justify-between text-gray-500 text-sm py-1">
+                                    <div>Ads & Social Media Videos</div>
+                                    <div>80%</div>
+                                </div>
+                                <div class="w-full bg-gray-300 shadow-inner rounded-full block overflow-hidden">
+                                    <div class="bg-indigo-600 h-2" style="width: 80%;"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="flex justify-between text-gray-500 text-sm py-1">
+                                    <div>Gaming Videos</div>
+                                    <div>70%</div>
+                                </div>
+                                <div class="w-full bg-gray-300 shadow-inner rounded-full block overflow-hidden">
+                                    <div class="bg-indigo-600 h-2" style="width: 70%;"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="flex justify-between text-gray-500 text-sm py-1">
+                                    <div>Explainer Videos</div>
+                                    <div>60%</div>
+                                </div>
+                                <div class="w-full bg-gray-300 shadow-inner rounded-full block overflow-hidden">
+                                    <div class="bg-indigo-600 h-2" style="width: 60%;"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="flex justify-between text-gray-500 text-sm py-1">
+                                    <div>Corporate Videos</div>
+                                    <div>50%</div>
+                                </div>
+                                <div class="w-full bg-gray-300 shadow-inner rounded-full block overflow-hidden">
+                                    <div class="bg-indigo-600 h-2" style="width: 50%;"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="flex justify-between text-gray-500 text-sm py-1">
+                                    <div>Music Videos</div>
+                                    <div>50%</div>
+                                </div>
+                                <div class="w-full bg-gray-300 shadow-inner rounded-full block overflow-hidden">
+                                    <div class="bg-indigo-600 h-2" style="width: 50%;"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="flex justify-between text-gray-500 text-sm py-1">
+                                    <div>Wedding & Event Videos</div>
+                                    <div>50%</div>
+                                </div>
+                                <div class="w-full bg-gray-300 shadow-inner rounded-full block overflow-hidden">
+                                    <div class="bg-indigo-600 h-2" style="width: 50%;"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="flex justify-between text-gray-500 text-sm py-1">
+                                    <div>Fiction Films</div>
+                                    <div>50%</div>
+                                </div>
+                                <div class="w-full bg-gray-300 shadow-inner rounded-full block overflow-hidden">
+                                    <div class="bg-indigo-600 h-2" style="width: 50%;"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="flex justify-between text-gray-500 text-sm py-1">
+                                    <div>Showreels</div>
+                                    <div>50%</div>
+                                </div>
+                                <div class="w-full bg-gray-300 shadow-inner rounded-full block overflow-hidden">
+                                    <div class="bg-indigo-600 h-2" style="width: 50%;"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="flex justify-between text-gray-500 text-sm py-1">
+                                    <div>eLearning Videos</div>
+                                    <div>50%</div>
+                                </div>
+                                <div class="w-full bg-gray-300 shadow-inner rounded-full block overflow-hidden">
+                                    <div class="bg-indigo-600 h-2" style="width: 50%;"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="flex justify-between text-gray-500 text-sm py-1">
+                                    <div>VR & 360</div>
+                                    <div>50%</div>
+                                </div>
+                                <div class="w-full bg-gray-300 shadow-inner rounded-full block overflow-hidden">
+                                    <div class="bg-indigo-600 h-2" style="width: 50%;"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="flex justify-between text-gray-500 text-sm py-1">
+                                    <div>Movie Trailers</div>
+                                    <div>50%</div>
+                                </div>
+                                <div class="w-full bg-gray-300 shadow-inner rounded-full block overflow-hidden">
+                                    <div class="bg-indigo-600 h-2" style="width: 50%;"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="flex justify-between text-gray-500 text-sm py-1">
+                                    <div>Family & Travel Videos</div>
+                                    <div>50%</div>
+                                </div>
+                                <div class="w-full bg-gray-300 shadow-inner rounded-full block overflow-hidden">
+                                    <div class="bg-indigo-600 h-2" style="width: 50%;"></div>
+                                </div>
+                            </li>
+                        </ul>                        
+                    </div>
+
+                    <div>
+                        <div class="flex space-x-4 items-center">
+                            <i class="ionicons ion-film-marker text-5xl text-indigo-400"></i> 
+                            <div>
+                                <h4 class="flex space-x-2 items-center font-bold text-xl">
+                                    <span>Video Production & Editing</span>
+                                </h4>
+                                <p class="font-light tracking-widest text-sm text-gray-400 mt-1">Опыт более 2 лет</p>
+                            </div>
+                        </div>
+                        <ul class="grid gap-3 mt-10">
+                            <li>                                
+                                <div class="flex justify-between text-gray-500 text-sm py-1">
+                                    <div>Video Editing</div>
+                                    <div>40%</div>
+                                </div>
+                                <div class="w-full bg-gray-300 shadow-inner rounded-full block overflow-hidden">
+                                    <div class="bg-indigo-600 h-2" style="width: 40%;"></div>
+                                </div>
+                            </li>
+                            <li>                                
+                                <div class="flex justify-between text-gray-500 text-sm py-1">
+                                    <div>Short Video Ads</div>
+                                    <div>40%</div>
+                                </div>
+                                <div class="w-full bg-gray-300 shadow-inner rounded-full block overflow-hidden">
+                                    <div class="bg-indigo-600 h-2" style="width: 40%;"></div>
+                                </div>
+                            </li>
+                            <li>                                
+                                <div class="flex justify-between text-gray-500 text-sm py-1">
+                                    <div>Lyric & Music Videos</div>
+                                    <div>40%</div>
+                                </div>
+                                <div class="w-full bg-gray-300 shadow-inner rounded-full block overflow-hidden">
+                                    <div class="bg-indigo-600 h-2" style="width: 40%;"></div>
+                                </div>
+                            </li>
+                            <li>                                
+                                <div class="flex justify-between text-gray-500 text-sm py-1">
+                                    <div>Article to Video</div>
+                                    <div>56%</div>
+                                </div>
+                                <div class="w-full bg-gray-300 shadow-inner rounded-full block overflow-hidden">
+                                    <div class="bg-indigo-600 h-2" style="width: 56%;"></div>
+                                </div>
+                            </li>
+                            <li>                                
+                                <div class="flex justify-between text-gray-500 text-sm py-1">
+                                    <div>Book Trailers</div>
+                                    <div>40%</div>
+                                </div>
+                                <div class="w-full bg-gray-300 shadow-inner rounded-full block overflow-hidden">
+                                    <div class="bg-indigo-600 h-2" style="width: 40%;"></div>
+                                </div>
+                            </li>
+                            <li>                                
+                                <div class="flex justify-between text-gray-500 text-sm py-1">
+                                    <div>eLearning Video Production</div>
+                                    <div>40%</div>
+                                </div>
+                                <div class="w-full bg-gray-300 shadow-inner rounded-full block overflow-hidden">
+                                    <div class="bg-indigo-600 h-2" style="width: 40%;"></div>
+                                </div>
+                            </li>
+                            <li>                                
+                                <div class="flex justify-between text-gray-500 text-sm py-1">
+                                    <div>Game Trailers</div>
+                                    <div>30%</div>
+                                </div>
+                                <div class="w-full bg-gray-300 shadow-inner rounded-full block overflow-hidden">
+                                    <div class="bg-indigo-600 h-2" style="width: 30%;"></div>
+                                </div>
+                            </li>
+                            <li>                                
+                                <div class="flex justify-between text-gray-500 text-sm py-1">
+                                    <div>Live-Action Explainers</div>
+                                    <div>49%</div>
+                                </div>
+                                <div class="w-full bg-gray-300 shadow-inner rounded-full block overflow-hidden">
+                                    <div class="bg-indigo-600 h-2" style="width: 49%;"></div>
+                                </div>
+                            </li>
+                            <li>                                
+                                <div class="flex justify-between text-gray-500 text-sm py-1">
+                                    <div>Real Estate Promo Videos</div>
+                                    <div>42%</div>
+                                </div>
+                                <div class="w-full bg-gray-300 shadow-inner rounded-full block overflow-hidden">
+                                    <div class="bg-indigo-600 h-2" style="width: 42%;"></div>
+                                </div>
+                            </li>
+                            <li>                                
+                                <div class="flex justify-between text-gray-500 text-sm py-1">
+                                    <div>Screencasting Videos</div>
+                                    <div>50%</div>
+                                </div>
+                                <div class="w-full bg-gray-300 shadow-inner rounded-full block overflow-hidden">
+                                    <div class="bg-indigo-600 h-2" style="width: 50%;"></div>
+                                </div>
+                            </li>
+                            <li>                                
+                                <div class="flex justify-between text-gray-500 text-sm py-1">
+                                    <div>Slideshow Videos</div>
+                                    <div>70%</div>
+                                </div>
+                                <div class="w-full bg-gray-300 shadow-inner rounded-full block overflow-hidden">
+                                    <div class="bg-indigo-600 h-2" style="width: 70%;"></div>
+                                </div>
+                            </li>
+                            <li>                                
+                                <div class="flex justify-between text-gray-500 text-sm py-1">
+                                    <div>Spokesperson Videos</div>
+                                    <div>40%</div>
+                                </div>
+                                <div class="w-full bg-gray-300 shadow-inner rounded-full block overflow-hidden">
+                                    <div class="bg-indigo-600 h-2" style="width: 40%;"></div>
+                                </div>
+                            </li>
+                            <li>                                
+                                <div class="flex justify-between text-gray-500 text-sm py-1">
+                                    <div>Subtitles & Captions</div>
+                                    <div>66%</div>
+                                </div>
+                                <div class="w-full bg-gray-300 shadow-inner rounded-full block overflow-hidden">
+                                    <div class="bg-indigo-600 h-2" style="width: 66%;"></div>
+                                </div>
+                            </li>
+                            <li>                                
+                                <div class="flex justify-between text-gray-500 text-sm py-1">
+                                    <div>Unboxing Videos</div>
+                                    <div>76%</div>
+                                </div>
+                                <div class="w-full bg-gray-300 shadow-inner rounded-full block overflow-hidden">
+                                    <div class="bg-indigo-600 h-2" style="width: 76%;"></div>
+                                </div>
+                            </li>
+                            <li>                                
+                                <div class="flex justify-between text-gray-500 text-sm py-1">
+                                    <div>Visual Effects</div>
+                                    <div>15%</div>
+                                </div>
+                                <div class="w-full bg-gray-300 shadow-inner rounded-full block overflow-hidden">
+                                    <div class="bg-indigo-600 h-2" style="width: 15%;"></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>  
+
+                    <div>
+                        <div class="flex space-x-4 items-center">
+                            <i class="fa fa-angle-double-up text-5xl text-indigo-400"></i> 
+                            <div>
+                                <h4 class="flex space-x-2 items-center font-bold text-xl">
+                                    <span>Animation & Motion Graphics</span>
+                                </h4>
+                                <p class="font-light tracking-widest text-sm text-gray-400 mt-1">Опыт более 5 лет</p>
+                            </div>
+                        </div>
+                        <ul class="grid gap-3 mt-10">
+                            <li>
+                                <div class="flex justify-between text-gray-500 text-sm py-1">
+                                    <div>Animated GIFs</div>
+                                    <div>80%</div>
+                                </div>
+                                <div class="w-full bg-gray-300 shadow-inner rounded-full block overflow-hidden">
+                                    <div class="bg-indigo-600 h-2" style="width: 80%;"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="flex justify-between text-gray-500 text-sm py-1">
+                                    <div>Logo Animation</div>
+                                    <div>80%</div>
+                                </div>
+                                <div class="w-full bg-gray-300 shadow-inner rounded-full block overflow-hidden">
+                                    <div class="bg-indigo-600 h-2" style="width: 80%;"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="flex justify-between text-gray-500 text-sm py-1">
+                                    <div>Animated Whiteboard & Explainer Videos</div>
+                                    <div>90%</div>
+                                </div>
+                                <div class="w-full bg-gray-300 shadow-inner rounded-full block overflow-hidden">
+                                    <div class="bg-indigo-600 h-2" style="width: 90%;"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="flex justify-between text-gray-500 text-sm py-1">
+                                    <div>3D Product Animation</div>
+                                    <div>30%</div>
+                                </div>
+                                <div class="w-full bg-gray-300 shadow-inner rounded-full block overflow-hidden">
+                                    <div class="bg-indigo-600 h-2" style="width: 30%;"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="flex justify-between text-gray-500 text-sm py-1">
+                                    <div>Animation for Streamers</div>
+                                    <div>60%</div>
+                                </div>
+                                <div class="w-full bg-gray-300 shadow-inner rounded-full block overflow-hidden">
+                                    <div class="bg-indigo-600 h-2" style="width: 60%;"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="flex justify-between text-gray-500 text-sm py-1">
+                                    <div>Animation for Streamers</div>
+                                    <div>40%</div>
+                                </div>
+                                <div class="w-full bg-gray-300 shadow-inner rounded-full block overflow-hidden">
+                                    <div class="bg-indigo-600 h-2" style="width: 40%;"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="flex justify-between text-gray-500 text-sm py-1">
+                                    <div>App & Website Promo Videos</div>
+                                    <div>30%</div>
+                                </div>
+                                <div class="w-full bg-gray-300 shadow-inner rounded-full block overflow-hidden">
+                                    <div class="bg-indigo-600 h-2" style="width: 30%;"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="flex justify-between text-gray-500 text-sm py-1">
+                                    <div>Character Animation</div>
+                                    <div>40%</div>
+                                </div>
+                                <div class="w-full bg-gray-300 shadow-inner rounded-full block overflow-hidden">
+                                    <div class="bg-indigo-600 h-2" style="width: 40%;"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="flex justify-between text-gray-500 text-sm py-1">
+                                    <div>Intros & Outros</div>
+                                    <div>45%</div>
+                                </div>
+                                <div class="w-full bg-gray-300 shadow-inner rounded-full block overflow-hidden">
+                                    <div class="bg-indigo-600 h-2" style="width: 45%;"></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="max-w-3xl mx-auto mt-10 section">
+                <div class="grid gap-5 text-center">
+                    <h2 class="mt-10 text-5xl font-bold text-black">Qualification</h2>
+                    <p class="text-gray-400">My personal journey</p>
+                </div>
+                <div id="tab" class="grid grid-cols-2 gap-14 py-10 border-b border-gray-50 text-gray-900">
+                    <div data-id="education" class="flex justify-center space-x-2 items-center cursor-pointer text-xl text-indigo-600 font-bold">
+                        <i class="fa fa-graduation-cap text-3xl"></i>
+                        <span>Education</span>
+                    </div>
+                    <div data-id="work" class="flex justify-center space-x-2 items-center cursor-pointer text-xl">
+                        <i class="ionicons ion-briefcase text-3xl"></i> 
+                        <span>Work</span>
+                    </div>
+                </div>
+                <div class="w-full block" id="education">
+                    <div class="flex flex-wrap md:flex-wrap-reverse md:flex-row md:items-center">
+                        <div class="w-full md:w-2/4 pl-0 md:pl-20 border-r-2 border-indigo-600 py-5">
+                            <h3 class="text-gray-900 text-xl font-bold uppercase mb-3">Schedule engineer</h3>
+                            <ul class="space-y-3 text-md">
+                                <li class="flex items-center">
+                                    <span><i class="fa fa-university"></i> &#160; Peru - University</span>
+                                </li>
+                                <li>
+                                    <small class="flex items-center space-x-2 text-gray-500">
+                                        <i class="ionicons ion-ios-calendar-outline text-xl text-gray-400"></i>
+                                        <span>2009 - 2014</span>
+                                    </small>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="w-full md:w-2/4 mb-10 md:mb-0 relative">
+                            <div class="absolute -top-12 -left-2">
+                                <i class="fa fa-circle text-indigo-600"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap-reverse md:flex-wrap flex-row md:items-center">
+                        <div class="w-full md:w-2/4 mb-10 md:mb-0 border-r-2 border-indigo-600 h-40 relative ">
+                            <div class="absolute top-7 -right-2.5">
+                                <i class="fa fa-circle text-indigo-600"></i>
+                            </div>
+                        </div>
+                        <div class="w-full md:w-2/4 pl-0 md:pl-20 py-5">
+                            <h3 class="text-gray-900 text-xl font-bold uppercase mb-3">Graphic Designer</h3>
+                            <ul class="space-y-3 text-md">
+                                <li class="flex items-center">
+                                    <span><i class="fa fa-university"></i> &#160; Spain - Institute</span>
+                                </li>
+                                <li>
+                                    <small class="flex items-center space-x-2 text-gray-500">
+                                        <i class="ionicons ion-ios-calendar-outline text-xl text-gray-400"></i>
+                                        <span>2014 - 2017</span>
+                                    </small>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap md:flex-wrap-reverse md:flex-row md:items-center">
+                        <div class="w-full md:w-2/4 pl-0 md:pl-20 border-r-2 border-indigo-600 py-5">
+                            <h3 class="text-gray-900 text-xl font-bold uppercase mb-3">Master Motion Product</h3>
+                            <ul class="space-y-3 text-md">
+                                <li class="flex items-center space-x-2">
+                                    <span><i class="fa fa-university"></i> &#160; Peru - Institute</span>
+                                </li>
+                                <li>
+                                    <small class="flex items-center space-x-2 text-gray-500">
+                                        <i class="ionicons ion-ios-calendar-outline text-xl text-gray-400"></i>
+                                        <span>2017 - 2019</span>
+                                    </small>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="w-full md:w-2/4 mb-10 md:mb-0 relative ">
+                            <div class="absolute -top-12 -left-2">
+                                <i class="fa fa-circle text-indigo-600"></i>
+                            </div>
+                        </div>
+                    </div>                
+                </div>
+                <div class="w-full hidden" id="work">
+                    <div class="flex flex-wrap md:flex-wrap-reverse md:flex-row md:items-center">
+                        <div class="w-full md:w-2/4 pl-0 md:pl-20 border-r-2 border-indigo-600 py-5">
+                            <h3 class="text-gray-900 text-xl font-bold uppercase mb-3">Graphic Designer</h3>
+                            <ul class="space-y-3 text-md">
+                                <li class="flex items-center">
+                                    <span><i class="ionicons ion-ios-briefcase text-xl"></i>&#160; Adobe Company</span>
+                                </li>
+                                <li>
+                                    <small class="flex items-center space-x-2 text-gray-500">
+                                        <i class="ionicons ion-ios-calendar-outline text-xl text-gray-400"></i>
+                                        <span>2011 - 2014</span>
+                                    </small>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="w-full md:w-2/4 mb-10 md:mb-0 relative">
+                            <div class="absolute -top-12 -left-2">
+                                <i class="fa fa-circle text-indigo-600"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap-reverse md:flex-wrap flex-row md:items-center">
+                        <div class="w-full md:w-2/4 mb-10 md:mb-0 border-r-2 border-indigo-600 h-40 relative ">
+                            <div class="absolute top-7 -right-2.5">
+                                <i class="fa fa-circle text-indigo-600"></i>
+                            </div>
+                        </div>
+                        <div class="w-full md:w-2/4 pl-0 md:pl-20 py-5">
+                            <h3 class="text-gray-900 text-xl font-bold uppercase mb-3">Video Designer</h3>
+                            <ul class="space-y-3 text-md">
+                                <li class="flex items-center">
+                                    <span><i class="ionicons ion-ios-briefcase text-xl"></i>&#160; MicroSoft Company</span>
+                                </li>
+                                <li>
+                                    <small class="flex items-center space-x-2 text-gray-500">
+                                        <i class="ionicons ion-ios-calendar-outline text-xl text-gray-400"></i>
+                                        <span>2014 - 2017</span>
+                                    </small>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap md:flex-wrap-reverse md:flex-row md:items-center">
+                        <div class="w-full md:w-2/4 pl-0 md:pl-20 border-r-2 border-indigo-600 py-5">
+                            <h3 class="text-gray-900 text-xl font-bold uppercase mb-3">Video Motion Designer</h3>
+                            <ul class="space-y-3 text-md">
+                                <li class="flex items-center space-x-2">
+                                    <span><i class="ionicons ion-ios-briefcase text-xl"></i>&#160; Apple - Company</span>
+                                </li>
+                                <li>
+                                    <small class="flex items-center space-x-2 text-gray-500">
+                                        <i class="ionicons ion-ios-calendar-outline text-xl text-gray-400"></i>
+                                        <span>2017 - 2021</span>
+                                    </small>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="w-full md:w-2/4 mb-10 md:mb-0 relative ">
+                            <div class="absolute -top-12 -left-2">
+                                <i class="fa fa-circle text-indigo-600"></i>
+                            </div>
+                        </div>
+                    </div>                
+                </div>
+            </section>
+
+            <section class="services max-w-6xl mx-auto py-10 h-screen section" id="services">
+                <div class="grid gap-5 text-center">
+                    <h2 class="mt-10 text-5xl font-bold text-black">Services</h2>
+                    <p class="text-gray-400">Whit i offer</p>
+                </div>
+                <div class="grid grid-cols-3 gap-5 mt-10">
+                    <div class="shadow-lg rounded-md p-10 border-t border-gray-50">
+                        <div class="grid gap-7 my-4">
+                            <div>
+                                <i class="ionicons ion-android-film text-7xl text-gray-200"></i>
+                            </div>
+                            <div class="h-28">
+                                <h4 class="font-bold text-3xl text-gray-900">
+                                    Редактирование видео
+                                </h4>
+                            </div>
+                            <div>
+                                <a href="#" class="flex items-center text-xl link text-indigo-600 hover:text-indigo-800 font-bold">
+                                    <span class="transition-all delay-150 duration-300 ease-linear mr-2">Подробнее</span> <i class="ionicons ion-arrow-right-c text-xl mt-1"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="shadow-lg rounded-md p-10 border-t border-gray-50">
+                        <div class="grid gap-7 my-4">
+                            <div>
+                                <i class="ionicons ion-film-marker text-7xl text-gray-200"></i>
+                            </div>
+                            <div class="h-28">
+                                <h4 class="font-bold text-3xl text-gray-900">Видео<br />производство и монтаж</h4>
+                            </div>
+                            <div>
+                                <a href="#" class="flex items-center text-xl link text-indigo-600 hover:text-indigo-800 font-bold">
+                                    <span class="transition-all delay-150 duration-300 ease-linear mr-2">Подробнее</span> <i class="ionicons ion-arrow-right-c text-xl mt-1"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="shadow-lg rounded-md p-10 border-t border-gray-50">
+                        <div class="grid gap-7 my-4">
+                            <div>
+                                <i class="fa fa-angle-double-up text-7xl text-gray-200"></i>
+                            </div>
+                            <div class="h-28">
+                                <h4 class="font-bold text-3xl text-gray-900">Анимация и анимационная графика</h4>
+                            </div>
+                            <div>
+                                <a href="#" class="flex items-center text-xl link text-indigo-600 hover:text-indigo-800 font-bold">
+                                    <span class="transition-all delay-150 duration-300 ease-linear mr-2">Подробнее</span> <i class="ionicons ion-arrow-right-c text-xl mt-1"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="portfolio max-w-6xl mx-auto py-10 h-screen section" id="portfolio">
+                <div class="grid gap-5 text-center">
+                    <h2 class="mt-10 text-5xl font-bold text-black">Portfolio</h2>
+                    <p class="text-gray-400">Whit i offer</p>
+                </div>
+                <div class="grid gap-5">
+                    <div class="swiper myPortfolio">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="grid grid-cols-2 gap-12 px-20">
+                                    <div class="overflow-hidden">
+                                        <img src="/assets/img/portfolio1.jpg" alt="..." class="w-full h-80 object-cover rounded-md" />
+                                    </div>
+                                    <div class="grid gap-4">
+                                        <h2 class="font-extrabold text-4xl mt-5">Professionally edited videos for Youtube</h2>
+                                        <p class="font-light text-sm text-gray-700">
+                                            Hi there! I’m a professional video editor and filmmaker with 6 years of experience.
+                                            I can edit your video footage with...<br />
+                                            <ul class="font-light text-sm text-gray-700">
+                                                <li>*Logo intros and outros</li>
+                                                <li>*Captions and/or subtitles</li>
+                                                <li>*Color corrections/grading</li>
+                                                <li>*Audio corrections like leveling, mixing</li>
+                                            </ul>
+                                        </p>
+                                        <div>
+                                            <a href="#" class="table px-10 py-4 rounded bg-indigo-600 hover:bg-indigo-800 text-white">
+                                                СМОТРЕТЬ DEMO <i class="ionicons ion-arrow-right-c mt-1"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                                                
+                                <div class="grid grid-cols-2 gap-12 px-20">
+                                    <div class="overflow-hidden">
+                                        <img src="/assets/img/portfolio2.jpg" alt="..." class="w-full h-80 object-cover rounded-md" />
+                                    </div>
+                                    <div class="grid gap-4">
+                                        <h2 class="font-extrabold text-4xl mt-5">Professionally edited videos for Youtube</h2>
+                                        <p class="font-light text-sm text-gray-700">
+                                            Hi there! I’m a professional video editor and filmmaker with 6 years of experience.
+                                            I can edit your video footage with...<br />
+                                            <ul class="font-light text-sm text-gray-700">
+                                                <li>*Logo intros and outros</li>
+                                                <li>*Captions and/or subtitles</li>
+                                                <li>*Color corrections/grading</li>
+                                                <li>*Audio corrections like leveling, mixing</li>
+                                            </ul>
+                                        </p>
+                                        <div>
+                                            <a href="#" class="table px-10 py-4 rounded bg-indigo-600 hover:bg-indigo-800 text-white">
+                                                СМОТРЕТЬ DEMO <i class="ionicons ion-arrow-right-c mt-1"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                                                
+                                <div class="grid grid-cols-2 gap-12 px-20">
+                                    <div class="overflow-hidden">
+                                        <img src="/assets/img/portfolio3.jpg" alt="..." class="w-full h-80 object-cover rounded-md" />
+                                    </div>
+                                    <div class="grid gap-4">
+                                        <h2 class="font-extrabold text-4xl mt-5">Professionally edited videos for Youtube</h2>
+                                        <p class="font-light text-sm text-gray-700">
+                                            Hi there! I’m a professional video editor and filmmaker with 6 years of experience.
+                                            I can edit your video footage with...<br />
+                                            <ul class="font-light text-sm text-gray-700">
+                                                <li>*Logo intros and outros</li>
+                                                <li>*Captions and/or subtitles</li>
+                                                <li>*Color corrections/grading</li>
+                                                <li>*Audio corrections like leveling, mixing</li>
+                                            </ul>
+                                        </p>
+                                        <div>
+                                            <a href="#" class="table px-10 py-4 rounded bg-indigo-600 hover:bg-indigo-800 text-white">
+                                                СМОТРЕТЬ DEMO <i class="ionicons ion-arrow-right-c mt-1"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                                                
+                                <div class="grid grid-cols-2 gap-12 px-20">
+                                    <div class="overflow-hidden">
+                                        <img src="/assets/img/portfolio1.jpg" alt="..." class="w-full h-80 object-cover rounded-md" />
+                                    </div>
+                                    <div class="grid gap-4">
+                                        <h2 class="font-extrabold text-4xl mt-5">Professionally edited videos for Youtube</h2>
+                                        <p class="font-light text-sm text-gray-700">
+                                            Hi there! I’m a professional video editor and filmmaker with 6 years of experience.
+                                            I can edit your video footage with...<br />
+                                            <ul class="font-light text-sm text-gray-700">
+                                                <li>*Logo intros and outros</li>
+                                                <li>*Captions and/or subtitles</li>
+                                                <li>*Color corrections/grading</li>
+                                                <li>*Audio corrections like leveling, mixing</li>
+                                            </ul>
+                                        </p>
+                                        <div>
+                                            <a href="#" class="table px-10 py-4 rounded bg-indigo-600 hover:bg-indigo-800 text-white">
+                                                СМОТРЕТЬ DEMO <i class="ionicons ion-arrow-right-c mt-1"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="project max-w-6xl mx-auto py-20">
+                <div class="bg-indigo-600 rounded-md">
+                    <div class="grid grid-cols-3 gap-12">
+                        <div class="col-span-2 p-10">
+                            <div class="py-5 grid h-full">
+                                <div class="grid place-items-start place-self-center gap-7">
+                                    <h2 class="text-7xl font-bold text-white">У вас <br />новый проект</h2>
+                                    <p class="text-2xl text-gray-50 font-light">
+                                        Свяжитесь со мной сейчас и <br />получите скидку 30% на свой новый проект.
+                                    </p>
+                                    <div>
+                                        <a href="#contact" class="table hex rounded border border-gray-50 text-xl text-white hover:text-indigo-600 bg-transparent hover:bg-white px-12 py-4">
+                                            Связаться сейчас <i class="fab fa-telegram-plane"></i>
+                                        </a>
+                                    </div>                                    
+                                </div>
+                            </div>                            
+                        </div>
+                        <div class="relative">
+                            <img src="/assets/img/project.png" class="absolute bottom-0 -left-8 w-full" alt="..." />
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="testimonial max-w-6xl mx-auto py-20 h-screen">
+                <div class="grid gap-5 text-center">
+                    <h2 class="mt-10 text-5xl font-bold text-black">Отзывы</h2>
+                    <p class="text-gray-400">Мои клиенты говорят обо мне</p>
+                </div>
+                <div class="block w-full">
+                    <div class="swiper myTestimonial" style="height: 350px;">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="border rounded p-10">
+                                    <div class="flex items-center space-x-4">
+                                        <div>
+                                            <img 
+                                                src="/assets/img/testimonial1.jpg" 
+                                                class="w-20 h-20 object-cover rounded-full" 
+                                                alt="Jackie Russell" 
+                                            />
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <i class="ionicons ion-android-star text-indigo-600"></i>
+                                                <i class="ionicons ion-android-star text-indigo-600"></i>
+                                                <i class="ionicons ion-android-star text-indigo-600"></i>
+                                                <i class="ionicons ion-android-star text-indigo-600"></i>
+                                                <i class="ionicons ion-android-star text-indigo-600"></i>                                    
+                                            </div>
+                                            <h4 class="font-bold text-gray-900 text-2xl">Jackie Russell</h4>
+                                            <p class="text-gray-400 text-base">Client</p>
+                                        </div>
+                                    </div>
+                                    <div class="pt-5">
+                                        <p class="font-light">
+                                            I get a good impression, 
+                                            I carry out my project with all the possible 
+                                            quality and attention and support 24 hours a day.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="border rounded p-10">
+                                    <div class="flex items-center space-x-4">
+                                        <div>
+                                            <img 
+                                                src="/assets/img/testimonial2.jpg" 
+                                                class="w-20 h-20 object-cover rounded-full" 
+                                                alt="Loïs Guerin" 
+                                            />
+                                            
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <i class="ionicons ion-android-star text-indigo-600"></i>
+                                                <i class="ionicons ion-android-star text-indigo-600"></i>
+                                                <i class="ionicons ion-android-star text-indigo-600"></i>
+                                                <i class="ionicons ion-android-star text-indigo-600"></i>
+                                                <i class="ionicons ion-android-star text-indigo-600"></i>                                    
+                                            </div>
+                                            <h4 class="font-bold text-gray-900 text-2xl">Loïs Guerin</h4>
+                                            <p class="text-gray-400 text-base">Client</p>
+                                        </div>
+                                    </div>
+                                    <div class="pt-5">
+                                        <p class="font-light">
+                                            I get a good impression, 
+                                            I carry out my project with all the possible 
+                                            quality and attention and support 24 hours a day.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="border rounded p-10">
+                                    <div class="flex items-center space-x-4">
+                                        <div>
+                                            <img 
+                                                src="/assets/img/testimonial3.jpg" 
+                                                class="w-20 h-20 object-cover rounded-full" 
+                                                alt="Bertram Madsen" 
+                                            />
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <i class="ionicons ion-android-star text-indigo-600"></i>
+                                                <i class="ionicons ion-android-star text-indigo-600"></i>
+                                                <i class="ionicons ion-android-star text-indigo-600"></i>
+                                                <i class="ionicons ion-android-star text-indigo-600"></i>
+                                                <i class="ionicons ion-android-star text-indigo-600"></i>                                    
+                                            </div>
+                                            <h4 class="font-bold text-gray-900 text-2xl">Bertram Madsen</h4>
+                                            <p class="text-gray-400 text-base">Client</p>
+                                        </div>
+                                    </div>
+                                    <div class="pt-5">
+                                        <p class="font-light">
+                                            I get a good impression, 
+                                            I carry out my project with all the possible 
+                                            quality and attention and support 24 hours a day.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="border rounded p-10">
+                                    <div class="flex items-center space-x-4">
+                                        <div>
+                                            <img 
+                                                src="https://randomuser.me/api/portraits/women/70.jpg" 
+                                                class="w-20 h-20 object-cover rounded-full" 
+                                                alt="Neea Lampi" 
+                                            />
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <i class="ionicons ion-android-star text-indigo-600"></i>
+                                                <i class="ionicons ion-android-star text-indigo-600"></i>
+                                                <i class="ionicons ion-android-star text-indigo-600"></i>
+                                                <i class="ionicons ion-android-star text-indigo-600"></i>
+                                                <i class="ionicons ion-android-star text-indigo-600"></i>                                    
+                                            </div>
+                                            <h4 class="font-bold text-gray-900 text-2xl">Neea Lampi</h4>
+                                            <p class="text-gray-400 text-base">Client</p>
+                                        </div>
+                                    </div>
+                                    <div class="pt-5">
+                                        <p class="font-light">
+                                            I get a good impression, 
+                                            I carry out my project with all the possible 
+                                            quality and attention and support 24 hours a day.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+                
+            </section>
+
+            <section class="contact max-w-6xl mx-auto py-10 h-screen section" id="contact">
+                <div class="grid gap-5 text-center">
+                    <h2 class="mt-10 text-5xl font-bold text-black">Contact me</h2>
+                    <p class="text-gray-400">Get in touch</p>
+                </div>
+                <div class="grid grid-cols-2 gap-12 mt-10">
+                    <div class="grid gap-4 text-3xl">
+                        <div class="flex items-center space-x-6">
+                            <i class="fa fa-map-marker-alt text-indigo-600"></i>
+                            <div>
+                                <strong>Местоположение:</strong>
+                                <a href="https://goo.gl/maps/29hEqeRYRcPfceFn6" class="text-xl no-underline hover:underline hover:text-indigo-600 text-gray-900 block font-light" target="_blank">
+                                    Россия, Москва
+                                </a>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-6">
+                            <i class="ionicons ion-ios-email text-indigo-600 text-4xl"></i>
+                            <div>
+                                <strong>E-mail:</strong>
+                                <a href="mailto:anastasia@yandex.ru" class="text-xl no-underline hover:underline hover:text-indigo-600 text-gray-900 block font-light">
+                                    anastasia@yandex.ru
+                                </a>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-6">
+                            <i class="ionicons ion-android-call text-indigo-600"></i>
+                            <div>
+                                <strong>Телефон:</strong>
+                                <a href="tel:+79659718649" class="text-xl no-underline hover:underline hover:text-indigo-600 text-gray-900 block font-light">
+                                    +7 (965) 971 86 49
+                                </a>
+                            </div>
+                        </div>
+                        <div>
+                            <strong>Месседжеры:</strong>
+                            <p class="flex space-x-5 text-5xl mt-5">
+                                <a href="tg://resolve?domain=@rusa_7" class="text-indigo-600 hover:text-indigo-800">
+                                    <i class="fab fa-telegram"></i>
+                                </a>
+                                <a href="https://wa.me/79969672065?text=Здравствуйте.%20Хочу%20заказать%20у%20вас%20обработку%20видео" class="text-indigo-600 hover:text-indigo-800">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                            </p>
+                        </div>
+
+                    </div>
+                    <div class="grid gap-5">
+                        <input type="text" name="name" placeholder="Ваше имя" class="placeholder-gray-500 font-light focus:outline-none focus:border-indigo-600 px-5 py-3 w-full rounded border" />
+                        <input type="text" name="email" placeholder="Ваш e-mail" class="placeholder-gray-500 font-light focus:outline-none focus:border-indigo-600 px-5 py-3 w-full rounded border" />
+                        <input type="text" name="phone" placeholder="Ваш телефон" class="placeholder-gray-500 font-light focus:outline-none focus:border-indigo-600 px-5 py-3 w-full rounded border" />
+                        <textarea name="message" rows="4" placeholder="Ваше сообщение..." class="placeholder-gray-500 font-light focus:outline-none focus:border-indigo-600 resize-none px-5 py-3 w-full rounded border"></textarea>
+                        <div>
+                            <button type="submit" class="rounded border text-white bg-indigo-600 hover:bg-indigo-800 px-14 py-4 font-bold">
+                                Отправить <i class="fab fa-telegram-plane"></i>
+                            </button>                            
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer bg-indigo-600">
+            <div class="max-w-6xl mx-auto py-20">
+                <div class="flex items-center justify-between text-white">
+                    <div class="grid gap-2">
+                        <p class="font-bold text-2xl">Anastasia</p>
+                        <p class="font-light">-- Videograph --</p>
+                    </div>
+                    <div class="grid gap-7 text-center font-light">
+                        <div class="flex justify-center space-x-3">
+                            <div><a href="#services"  class="hex text-white hover:text-gray-100 no-underline hover:underline">Услуги</a></div>
+                            <div><a href="#portfolio" class="hex text-white hover:text-gray-100 no-underline hover:underline">Портфолио</a></div>
+                            <div><a href="#contact"   class="hex text-white hover:text-gray-100 no-underline hover:underline">Контакты</a></div>
+                        </div>
+                        <small>&copy; All Right Recerved , 2021</small>
+                    </div>
+                    <div>
+                        <div class="flex items-center justify-end text-3xl space-x-6">
+                            <div>
+                                <a href="https://facebook.com" class="text-gray-50 hover:text-indigo-900">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                            </div>
+                            <div>
+                                <a href="https://instagram.com" class="text-gray-50 hover:text-indigo-900">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </div>
+                            <div>
+                                <a href="https://twitter.com" class="text-gray-50 hover:text-indigo-900">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        
+        <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script> -->
+        <script src="/assets/js/jquery-1.12.4.min.js"></script>
+        <script src="/assets/js/swiper-bundle.min.js"></script>
+        <script src="/assets/js/main.js"></script>
+    </body>
 </html>
