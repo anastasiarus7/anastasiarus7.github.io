@@ -44,12 +44,6 @@ $(document).ready(function () {
         }
     });
 
-    $('a.link span').hover(function(){ 
-	    $(this).addClass('mr-5'); 
-    }, function(){ 
-	    $(this).removeClass('mr-5'); 
-    });
-
 });
 
 

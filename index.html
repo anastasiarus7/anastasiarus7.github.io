@@ -39,7 +39,8 @@
                                 </span>
                             </a>
                         </div>
-                        <div class="top-0 left-0 items-start hidden w-full h-full p-4 text-sm bg-gray-900 bg-opacity-50 md:items-center md:w-3/4 md:absolute lg:text-base md:bg-transparent md:p-0 md:relative md:flex" :class="{'flex fixed': showMenu, 'hidden': !showMenu }">
+                        <!-- :class="{'flex fixed': showMenu, 'hidden': !showMenu }" -->
+                        <div class="top-0 left-0 items-start hidden w-full h-full p-4 text-sm bg-gray-900 bg-opacity-50 md:items-center md:w-3/4 md:absolute lg:text-base md:bg-transparent md:p-0 md:relative md:flex">
                             <div class="flex-col w-full h-auto overflow-hidden bg-white rounded-lg md:bg-transparent md:overflow-visible md:rounded-none md:relative md:flex md:flex-row">
                                 <a href="/" class="inline-flex items-center block w-auto h-16 px-6 text-xl font-black leading-none text-gray-900 md:hidden">Anastasia<span class="text-indigo-600">.</span></a>
                                 <div id="nav" class="nav flex flex-col items-start justify-center w-full space-x-6 text-center lg:space-x-8 md:w-2/3 md:mt-0 md:flex-row md:items-center text-gray-500">
@@ -221,12 +222,8 @@
                                 </h4>
                                 <div class="flex items-center space-x-3 font-light tracking-widest text-sm text-gray-400 mt-1">
                                     <div class="text-gray-500">{{item.years}}</div>
-                                    <div>
-                                        <i class="fa fa-star text-yellow-500"></i>
-                                        <i class="fa fa-star text-yellow-500"></i>
-                                        <i class="fa fa-star text-yellow-500"></i>
-                                        <i class="fa fa-star text-yellow-500"></i>
-                                        <i class="fa fa-star text-yellow-500"></i>
+                                    <div class="flex space-x-1">
+                                        <i class="fa fa-star text-yellow-500" v-for="n of 5"></i>
                                     </div>
                                 </div>
                                 <p>{{item.experience}}</p>
@@ -387,59 +384,53 @@
                     </div>
                 </section>
 
-                <section class="services max-w-6xl mx-auto py-10 h-screen section" id="services">
+                <section class="services max-w-6xl mx-auto py-10 section" id="services">
                     <div class="grid gap-5 text-center">
                         <h2 class="mt-10 text-5xl font-bold text-black">Услуги</h2>
                         <p class="text-gray-400">Я предлагаю</p>
                     </div>
-                    <div class="grid grid-cols-3 gap-5 mt-10">
-                        <div class="shadow-lg rounded-md p-10 border-t border-gray-50">
+                    <div class="grid shadow-lg rounded-md md:p-20 p-10 border-t border-gray-50 relative mt-10" v-if="dataTable">
+                        <button @click="dataTable = null" class="absolute top-5 right-6">
+                            <i class="fa fa-times text-3xl"></i>
+                        </button>
+                        <h2 class="text-3xl font-extrabold">
+                            <i :class="dataTable.icon" class="text-indigo-500"></i> 
+                            {{dataTable.header | strippedContent}}
+                        </h2>
+                        <ul class="list-inside list-disc mt-20 grid gap-4">
+                            <li v-for="tab of dataTable.list" class="font-light">{{tab.value}}</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="grid grid-cols-3 gap-5 mt-10" v-else>
+                        
+                        <div class="shadow-lg rounded-md p-10 border-t border-gray-50" v-for="(table, i) of tableService">
                             <div class="grid gap-7 my-4">
                                 <div>
-                                    <i class="ionicons ion-android-film text-7xl text-gray-200"></i>
+                                    <i class="text-7xl text-gray-200" :class="table.icon"></i>
                                 </div>
                                 <div class="h-28">
-                                    <h4 class="font-bold text-3xl text-gray-900">
-                                        Редактирование видео
-                                    </h4>
+                                    <h4 class="font-bold text-3xl text-gray-900" v-html="table.header"></h4>
                                 </div>
                                 <div>
-                                    <a href="#" class="flex items-center text-xl link text-indigo-600 hover:text-indigo-800 font-bold">
-                                        <span class="transition-all delay-150 duration-300 ease-linear mr-2">Подробнее</span> <i class="ionicons ion-arrow-right-c text-xl mt-1"></i>
+                                    <a 
+                                        @click="getID(table.id)" 
+                                        @mouseover="isHovering = table.id" 
+                                        @mouseout="isHovering = false"
+                                        class="cursor-pointer flex items-center text-xl link text-indigo-600 hover:text-indigo-800 font-bold"
+                                    >
+                                        <span
+                                            :class="[isHovering === i+1 ? 'mr-5' : '']"
+                                            class="transition-all delay-150 duration-300 ease-linear mr-2" 
+                                        >
+                                            Подробнее
+                                        </span> 
+                                        <i class="ionicons ion-arrow-right-c text-xl mt-1"></i>
                                     </a>
                                 </div>
                             </div>
                         </div>
-                        <div class="shadow-lg rounded-md p-10 border-t border-gray-50">
-                            <div class="grid gap-7 my-4">
-                                <div>
-                                    <i class="ionicons ion-film-marker text-7xl text-gray-200"></i>
-                                </div>
-                                <div class="h-28">
-                                    <h4 class="font-bold text-3xl text-gray-900">Видео<br />производство и монтаж</h4>
-                                </div>
-                                <div>
-                                    <a href="#" class="flex items-center text-xl link text-indigo-600 hover:text-indigo-800 font-bold">
-                                        <span class="transition-all delay-150 duration-300 ease-linear mr-2">Подробнее</span> <i class="ionicons ion-arrow-right-c text-xl mt-1"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="shadow-lg rounded-md p-10 border-t border-gray-50">
-                            <div class="grid gap-7 my-4">
-                                <div>
-                                    <i class="fa fa-angle-double-up text-7xl text-gray-200"></i>
-                                </div>
-                                <div class="h-28">
-                                    <h4 class="font-bold text-3xl text-gray-900">Анимация и анимационная графика</h4>
-                                </div>
-                                <div>
-                                    <a href="#" class="flex items-center text-xl link text-indigo-600 hover:text-indigo-800 font-bold">
-                                        <span class="transition-all delay-150 duration-300 ease-linear mr-2">Подробнее</span> <i class="ionicons ion-arrow-right-c text-xl mt-1"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+
                     </div>
                 </section>
 
@@ -600,131 +591,33 @@
                     <div class="block w-full">
                         <div class="swiper myTestimonial" style="height: 350px;">
                             <div class="swiper-wrapper">
-                                <div class="swiper-slide">
+
+                                <div class="swiper-slide" v-for="(test, index) of testimonial">
                                     <div class="border rounded p-10">
                                         <div class="flex items-center space-x-4">
                                             <div>
                                                 <img 
-                                                    src="/assets/img/testimonial1.jpg" 
+                                                    :src="test.avatar" 
                                                     class="w-20 h-20 object-cover rounded-full" 
-                                                    alt="Jackie Russell" 
+                                                    :alt="test.name" 
                                                 />
                                             </div>
                                             <div>
-                                                <div>
-                                                    <i class="ionicons ion-android-star text-indigo-600"></i>
-                                                    <i class="ionicons ion-android-star text-indigo-600"></i>
-                                                    <i class="ionicons ion-android-star text-indigo-600"></i>
-                                                    <i class="ionicons ion-android-star text-indigo-600"></i>
-                                                    <i class="ionicons ion-android-star text-indigo-600"></i>                                    
+                                                <div class="flex space-x-1">
+                                                    <i class="ionicons ion-android-star text-indigo-600" v-for="n in 5"></i>                                   
                                                 </div>
-                                                <h4 class="font-bold text-gray-900 text-2xl">Jackie Russell</h4>
-                                                <p class="text-gray-400 text-base">Client</p>
+                                                <h4 class="font-bold text-gray-900 text-2xl">{{test.name}}</h4>
+                                                <p class="text-gray-400 text-base">Клиент</p>
                                             </div>
                                         </div>
                                         <div class="pt-5">
                                             <p class="font-light">
-                                                I get a good impression, 
-                                                I carry out my project with all the possible 
-                                                quality and attention and support 24 hours a day.
+                                                {{test.review}}
                                             </p>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="swiper-slide">
-                                    <div class="border rounded p-10">
-                                        <div class="flex items-center space-x-4">
-                                            <div>
-                                                <img 
-                                                    src="/assets/img/testimonial2.jpg" 
-                                                    class="w-20 h-20 object-cover rounded-full" 
-                                                    alt="Loïs Guerin" 
-                                                />
-                                                
-                                            </div>
-                                            <div>
-                                                <div>
-                                                    <i class="ionicons ion-android-star text-indigo-600"></i>
-                                                    <i class="ionicons ion-android-star text-indigo-600"></i>
-                                                    <i class="ionicons ion-android-star text-indigo-600"></i>
-                                                    <i class="ionicons ion-android-star text-indigo-600"></i>
-                                                    <i class="ionicons ion-android-star text-indigo-600"></i>                                    
-                                                </div>
-                                                <h4 class="font-bold text-gray-900 text-2xl">Loïs Guerin</h4>
-                                                <p class="text-gray-400 text-base">Client</p>
-                                            </div>
-                                        </div>
-                                        <div class="pt-5">
-                                            <p class="font-light">
-                                                I get a good impression, 
-                                                I carry out my project with all the possible 
-                                                quality and attention and support 24 hours a day.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="border rounded p-10">
-                                        <div class="flex items-center space-x-4">
-                                            <div>
-                                                <img 
-                                                    src="/assets/img/testimonial3.jpg" 
-                                                    class="w-20 h-20 object-cover rounded-full" 
-                                                    alt="Bertram Madsen" 
-                                                />
-                                            </div>
-                                            <div>
-                                                <div>
-                                                    <i class="ionicons ion-android-star text-indigo-600"></i>
-                                                    <i class="ionicons ion-android-star text-indigo-600"></i>
-                                                    <i class="ionicons ion-android-star text-indigo-600"></i>
-                                                    <i class="ionicons ion-android-star text-indigo-600"></i>
-                                                    <i class="ionicons ion-android-star text-indigo-600"></i>                                    
-                                                </div>
-                                                <h4 class="font-bold text-gray-900 text-2xl">Bertram Madsen</h4>
-                                                <p class="text-gray-400 text-base">Client</p>
-                                            </div>
-                                        </div>
-                                        <div class="pt-5">
-                                            <p class="font-light">
-                                                I get a good impression, 
-                                                I carry out my project with all the possible 
-                                                quality and attention and support 24 hours a day.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="border rounded p-10">
-                                        <div class="flex items-center space-x-4">
-                                            <div>
-                                                <img 
-                                                    src="https://randomuser.me/api/portraits/women/70.jpg" 
-                                                    class="w-20 h-20 object-cover rounded-full" 
-                                                    alt="Neea Lampi" 
-                                                />
-                                            </div>
-                                            <div>
-                                                <div>
-                                                    <i class="ionicons ion-android-star text-indigo-600"></i>
-                                                    <i class="ionicons ion-android-star text-indigo-600"></i>
-                                                    <i class="ionicons ion-android-star text-indigo-600"></i>
-                                                    <i class="ionicons ion-android-star text-indigo-600"></i>
-                                                    <i class="ionicons ion-android-star text-indigo-600"></i>                                    
-                                                </div>
-                                                <h4 class="font-bold text-gray-900 text-2xl">Neea Lampi</h4>
-                                                <p class="text-gray-400 text-base">Client</p>
-                                            </div>
-                                        </div>
-                                        <div class="pt-5">
-                                            <p class="font-light">
-                                                I get a good impression, 
-                                                I carry out my project with all the possible 
-                                                quality and attention and support 24 hours a day.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
+
                             </div>
                             <div class="swiper-pagination"></div>
                         </div>
@@ -767,12 +660,24 @@
                                 </div>
                             </div>
                             <div>
-                                <strong>Месседжеры:</strong>
+                                <strong>
+                                    Месседжеры: 
+                                    <small class="font-light text-sm">{{isCall}}</small>
+                                </strong>
                                 <p class="flex space-x-5 text-5xl mt-5">
-                                    <a href="tg://resolve?domain=@rusa_7" class="text-indigo-600 hover:text-indigo-800">
+                                    <a 
+                                        href="tg://resolve?domain=@rusa_7" class="text-indigo-600 hover:text-indigo-800"
+                                        @mouseover="isCall = 'Написать в Telegram'" 
+                                        @mouseout="isCall = ''"
+                                    >
                                         <i class="fab fa-telegram"></i>
                                     </a>
-                                    <a href="https://wa.me/79969672065?text=Здравствуйте.%20Хочу%20заказать%20у%20вас%20обработку%20видео" class="text-indigo-600 hover:text-indigo-800">
+                                    <a 
+                                        href="https://wa.me/79969672065?text=Здравствуйте.%20Хочу%20заказать%20у%20вас%20обработку%20видео" 
+                                        class="text-indigo-600 hover:text-indigo-800"
+                                        @mouseover="isCall = 'Написать на WhatsApp'" 
+                                        @mouseout="isCall = ''"
+                                    >
                                         <i class="fab fa-whatsapp"></i>
                                     </a>
                                 </p>
